@@ -4,11 +4,39 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather app</title>
   </head>
   <body>
-    <h1>Vanilla Weather app</h1>
+    <div class="container">
+      <h1>New York</h1>
+      <div class="row">
+        <div class="col-6">
+          <ul>
+            <li>Saturday 23:26, scattered clouds</li>
+            <li>Humidity: 78%, Wind: 3.09km/h</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+            alt="clouds"
+          />
+          <span class="temperature">16</span>
+          <span class="unit">°C</span>
+        </div>
+      </div>
+    </div>
+    <small class="author">
+      <a href="vanilla-weather-app" target="_blank">Open-source code,</a> by
+      Oksana Khodankova
+    </small>
     <script src="src/app.js"></script>
   </body>
 </html>
