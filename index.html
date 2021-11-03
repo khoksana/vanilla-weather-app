@@ -11,32 +11,49 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather app</title>
   </head>
   <body>
     <div class="container">
-      <h1>New York</h1>
-      <div class="row">
-        <div class="col-6">
-          <ul>
-            <li>Saturday 23:26, scattered clouds</li>
-            <li>Humidity: 78%, Wind: 3.09km/h</li>
-          </ul>
-        </div>
-        <div class="col-6">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-            alt="clouds"
-          />
-          <span class="temperature">16</span>
-          <span class="unit">°C</span>
+      <div class="weather-app-wraper">
+        <div class="weather-app">
+          <div class="row">
+            <div class="col-6">
+              <h1>New York</h1>
+              <ul>
+                <li>
+                  <span class="time"> Saturday 23:26,</span>
+                  <span class="weather-info">scattered clouds</span>
+                </li>
+                <li>
+                  Humidity: <strong>78%</strong> , Wind:
+                  <strong>3.09km/h</strong>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <div class="temperature-container">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="clouds"
+                />
+                <span class="temperature">16</span>
+                <span class="unit">°C</span>
+              </div>
+            </div>
+          </div>
+          <footer class="author">
+            <a
+              href="https://github.com/khoksana/vanilla-weather-app"
+              target="_blank"
+              >Open-source code,</a
+            >
+            by Oksana Khodankova
+          </footer>
         </div>
       </div>
     </div>
-    <small class="author">
-      <a href="vanilla-weather-app" target="_blank">Open-source code,</a> by
-      Oksana Khodankova
-    </small>
     <script src="src/app.js"></script>
   </body>
 </html>
