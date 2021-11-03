@@ -10,8 +10,8 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather app</title>
   </head>
   <body>
@@ -20,15 +20,17 @@
         <div class="weather-app">
           <div class="row">
             <div class="col-6">
-              <h1>New York</h1>
+              <h1 id="city">New York</h1>
               <ul>
                 <li>
-                  <span class="time"> Saturday 23:26,</span>
-                  <span class="weather-info">scattered clouds</span>
+                  <span id="time"> Saturday 23:26,</span>
+                  <span class="weather-info" id="weather-info-id"
+                    > </span
+                  >
                 </li>
                 <li>
-                  Humidity: <strong>78%</strong> , Wind:
-                  <strong>3.09km/h</strong>
+                  Humidity: <strong id="humidity-id"> </strong> , Wind:
+                  <strong id="wind-id"> </strong>
                 </li>
               </ul>
             </div>
@@ -38,7 +40,7 @@
                   src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                   alt="clouds"
                 />
-                <span class="temperature">16</span>
+                <span class="temperature" id="temperature-id"></span> </span>
                 <span class="unit">°C</span>
               </div>
             </div>
