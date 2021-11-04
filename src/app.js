@@ -47,9 +47,19 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
-let apiKey = "2a2eaa51d996796495bf456e5b58adf4";
-let city = "Berlin";
+function search(city) {
+  let apiKey = "2a2eaa51d996796495bf456e5b58adf4";
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(displayTemperature);
+}
 
-let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#search-input-id");
+  search(cityInputElement.value);
+}
 
-axios.get(apiURL).then(displayTemperature);
+search("Milan");
+
+let form = document.querySelector("#search-by-city");
+form.addEventListener("submit", handleSubmit);
