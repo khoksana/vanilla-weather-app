@@ -34,6 +34,8 @@ function displayTemperature(response) {
   let dataElement = document.querySelector("#time");
   let iconElement = document.querySelector("#weather-icon-id");
 
+  celsiusTemperature = Math.round(response.data.main.temp);
+
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -59,7 +61,33 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Milan");
+function displayFahrenheitMetric(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature-id");
+  let fahrenheiTempereture = (celsiusTemperature * 9) / 5 + 32;
+
+  temperatureElement.innerHTML = Math.round(fahrenheiTempereture);
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+}
+
+function displayCelsiusMetric(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature-id");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+}
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-by-city");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheit = document.querySelector("#fahrenheit-id");
+fahrenheit.addEventListener("click", displayFahrenheitMetric);
+
+let celsius = document.querySelector("#celsius-id");
+celsius.addEventListener("click", displayCelsiusMetric);
+
+search("Berlin");

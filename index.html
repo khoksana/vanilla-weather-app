@@ -18,32 +18,37 @@
     <div class="container">
       <div class="weather-app-wraper">
         <div class="weather-app">
-          <form id="search-by-city">
+          <form id="search-by-city" class="mb-3">
             <div class="row">
               <div class="col-9">
-            <input type="search" 
-                   class="form-control search-input" 
-                   id="search-input-id" 
-                   placeholder="🔎 Type a city..."
-                   autocomplete="off">
-          </div>
-          <div class="col-3 p-0">
-            <input type="submit" class="btn btn-primary w-100" value="Search">
-          </div>
-          </div>
+                <input
+                  type="search"
+                  class="form-control search-input"
+                  id="search-input-id"
+                  placeholder="🔎 Type a city..."
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3 p-0">
+                <input
+                  type="submit"
+                  class="btn btn-primary w-100"
+                  value="Search"
+                />
+              </div>
+            </div>
           </form>
           <div class="row">
             <div class="col-6">
-              <h1 id="city"> </h1>
+              <h1 id="city"></h1>
               <ul>
-                <li>Last updated:
+                <li>
+                  Last updated:
                   <span id="time"> </span>
                 </li>
                 <li>
-                    <span class="weather-info" id="weather-info-id"
-                    > </span
-                  >
-               </li>
+                  <span class="weather-info" id="weather-info-id"> </span>
+                </li>
                 <li>
                   Humidity: <strong id="humidity-id"> </strong> , Wind:
                   <strong id="wind-id"> </strong>
@@ -52,13 +57,12 @@
             </div>
             <div class="col-6">
               <div class="temperature-container">
-                <img
-                  src=""
-                  alt=""
-                  id = "weather-icon-id"
-                />
-                <span class="temperature" id="temperature-id"></span> </span>
-                <span class="unit">°C</span>
+                <img src="" alt="" id="weather-icon-id" />
+                <span class="temperature" id="temperature-id"> </span>
+                <span class="unit"
+                  ><a href="#" id="celsius-id" class="active">°C </a> |</span
+                >
+                <span class="unit"><a href="#" id="fahrenheit-id">°F</a></span>
               </div>
             </div>
           </div>
