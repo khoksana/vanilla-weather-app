@@ -25,6 +25,35 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes},`;
 }
 
+function displayForecast() {
+  let weatherForecastElement = document.querySelector("#weather-forecast-id");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+               <div class="weather-forecast-time">${day}</div>
+               <img
+                 src="http://openweathermap.org/img/wn/10n@2x.png"
+                 alt=""
+                 width="80"
+                 height="80"
+                 class="weather-icon"
+               />
+               <div class="weather-forecast-temp">
+                 <span class="weather-forecast-temp-max">18° </span>
+                 <span class="weather-forecast-temp-min">12°</span>
+               </div>
+             </div>
+           `;
+  });
+
+  weatherForecastElement.innerHTML = forecastHTML + `</div>`;
+}
+
 function displayTemperature(response) {
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature-id");
@@ -91,3 +120,4 @@ let celsius = document.querySelector("#celsius-id");
 celsius.addEventListener("click", displayCelsiusMetric);
 
 search("Berlin");
+displayForecast();
