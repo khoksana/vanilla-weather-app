@@ -34,13 +34,9 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
-
   let weatherForecastElement = document.querySelector("#weather-forecast-id");
-
   let forecastHTML = `<div class="row">`;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
@@ -121,33 +117,9 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFahrenheitMetric(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-id");
-  let fahrenheiTempereture = (celsiusTemperature * 9) / 5 + 32;
-
-  temperatureElement.innerHTML = Math.round(fahrenheiTempereture);
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-}
-
-function displayCelsiusMetric(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature-id");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  celsius.classList.add("active");
-  fahrenheit.classList.remove("active");
-}
-
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-by-city");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheit = document.querySelector("#fahrenheit-id");
-fahrenheit.addEventListener("click", displayFahrenheitMetric);
-
-let celsius = document.querySelector("#celsius-id");
-celsius.addEventListener("click", displayCelsiusMetric);
 
 search("Berlin");
